@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.offer{
+    background-color: black;
+    color: white;
+    height: 35px;
+    text-align: center;
+    font-size: 25px;
+    
+    
+}
+#img{
+    position: relative;
+    left: 29%;
+
+}
+.navbar ul{
+    list-style: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 30px;
+    display:flex;
+    position: relative;
+    top: 10px;
+    justify-content: space-around;
+}
+.line{
+    height: 1px;
+    width:100%;
+    background-color: grey;
+    position: relative;
+    top: 30px;
+}
+#login{
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 5px;
+    position: relative;
+    top: 150px;
+    text-align: center;
+    }
+    #enteremail{
+        position: relative;
+        top: 200px;
+        text-align: center;
+        color:gray;
+    }
+   
+#Lastname{
+    display:grid;
+    position: relative;
+    top:280px;
+    width:400px;
+    height:35px;
+    left: 40%;
+    }
+    #Firstname{
+    display:grid;
+    position: relative;
+    top:250px;
+    width:400px;
+    height:35px;
+    left: 40%;
+    }
+    #Email{
+        display:grid;
+        position: relative;
+        top:310px;
+        width:400px;
+        height:35px;
+        left: 40%;
+        }
+        #Password{
+        display:grid;
+        position: relative;
+        top:340px;
+        width:400px;
+        height:35px;
+        left: 40%;
+        }
+        #Adress{
+            display:grid;
+            position: relative;
+            top:360px;
+            width:400px;
+            height:35px;
+            left: 40%;
+        }
+        #Phone{
+            display:grid;
+            position: relative;
+            top:380px;
+            width:400px;
+            height:35px;
+            left: 40%;
+        }
+    #registerbtn{
+        font-family: 'Quicksand', sans-serif;
+        letter-spacing: 5px;
+        width:400px;
+        border: solid #9A9999;
+        border-radius:0px;
+        height:35px;
+        position: relative;
+        top:400px;
+        left: 40%;
+        background-color: #9A9999;
+        cursor: pointer;
+
+    }
