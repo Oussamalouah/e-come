@@ -1,4 +1,34 @@
+<?php
+session_start();
+require 'connect.php';
+if(!empty($_SESSION["customerCode"])){
+    header("location: welcome.php");
+}
+if(isset($_POST["loginbtn"])){
+ $email = $_POST['email'];
+ $password = $_POST['password']; 
+ $result = mysqli_query($mysqli,"SELECT * FROM customers WHERE email ='$email'");
+ $row = mysqli_fetch_assoc($result);
+ if(mysqli_num_rows($result) > 0){
+     if($password == $row["password"]){
+       $_SESSION["login"] = true;
+       $_SESSION["customerCode"] =$row["customerCode"];
+       header("location: welcome.php");
+     }
+     else{
+        echo
+        "<script>alert('Wrong Password');</script>";
+     }
 
+ }
+ else{
+     echo
+     "<script>alert('User Not Registered');</script>";
+ }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +59,7 @@
     </div>
     <h1 id='login'>LOGIN</h1>
     <P id='enteremail'>Please enter your e-mail and password:</P>
-<form  action="process.php"method="POST">
+<form method="POST">
     <input type="text" name="email" id ="email" placeholder="Email">
     <input type="password" name="password" id ="password" placeholder="Password">
     <button type ="submit" name="loginbtn"id="loginbtn">LOGIN</button>

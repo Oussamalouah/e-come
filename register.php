@@ -1,5 +1,9 @@
 <?php
-include 'connect.php';
+session_start();
+require 'connect.php';
+if(!empty($_SESSION["customerCode"])){
+    header("location: welcome.php");
+}
 // INSERTING DATA INTO DATABASE
 if(isset($_POST['registerbtn'])){
     $Firstname = $_POST['Firstname'];
@@ -13,7 +17,7 @@ if(isset($_POST['registerbtn'])){
     if($_POST['Firstname']!="" and $_POST['Lastname']!="" and $_POST['Email']!="" and $_POST['Password']!="" and $_POST['Adress']!="" and $_POST['Phone']!=""){
     $sql="INSERT INTO `customers` (`lastName`, `firstName`,`adress`, `phone`,`email`,`password`) VALUES ( '$Lastname', '$Firstname', '$Adress', '$Phone', '$Email', '$Password')";
         $result= mysqli_query($mysqli,$sql);
-        header("location:login.php");
+        header("location: login.php");
       }
 ?>
 <!DOCTYPE html>
