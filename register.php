@@ -1,8 +1,9 @@
 <?php
+error_reporting(0);
 session_start();
 require 'connect.php';
 if(!empty($_SESSION["customerCode"])){
-    header("location: welcome.php");
+    header("location: index.php");
 }
 // INSERTING DATA INTO DATABASE
 if(isset($_POST['registerbtn'])){
@@ -41,10 +42,8 @@ if(isset($_POST['registerbtn'])){
     <div class ="navbar">
      <img  id ='img'src="./images/logo.png" alt="">
      <ul>
-     <li>About</li>
-     <li>What’s new</li>
-     <li>Hair Care</li>
-     <li>Skin Care</li>
+     <li id ="home"><a href ="mainpage.php">Home</a></li>
+     <li>Product</li>
      </ul>
      <div class="line"></div>
     </div>
@@ -59,6 +58,56 @@ if(isset($_POST['registerbtn'])){
     <input type="text"  id ="Phone" name="Phone" placeholder="Phone number">
     <button type ="submit" name ="registerbtn"id="registerbtn">CREATE MY ACCOUNT</button>
 </form>
+<footer class="footer-distributed">
+<div class="footer-left">
+    <img src="logo2.png" alt="">
+    <p class="footer-links">
+        <a href="#">Home</a>
+        |
+        <a href="#">About</a>
+        |
+        <a href="#">Contact</a>
+        |
+        <a href="#">Blog</a>
+    </p>
+
+    <p class="footer-company-name">Copyright © 2021 <strong>SALMA-COSMETOCS</strong> All rights reserved</p>
+</div>
+
+<div class="footer-center">
+    <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>Tanger</span>
+            Morocco</p>
+    </div>
+
+    <div>
+        <i class="fa fa-phone"></i>
+        <p>+212 64**9**258</p>
+    </div>
+    <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto : salmacosmetics@gmail.com">salmacosmetics@gmail.com</a></p>
+    </div>
+</div>
+<div class="footer-right">
+    <p class="footer-company-about">
+        <span>About the company</span>
+        <strong>SALMA COSMETICS</strong> is the Dermatologist Recommended skincare brand offers a wide range of skincare products.
+    </p>
+    <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+    </div>
+</div>
+</footer>
+
+
+</body>
+</html>
 
 </body>
 </html>

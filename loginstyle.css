@@ -16,6 +16,10 @@
     left: 29%;
 
 }
+.navbar a {
+    text-decoration: none;
+    color: black;
+}
 .navbar ul{
     list-style: none;
     font-family: 'Quicksand', sans-serif;

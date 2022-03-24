@@ -2,7 +2,7 @@
 session_start();
 require 'connect.php';
 if(!empty($_SESSION["customerCode"])){
-    header("location: welcome.php");
+    header("location: index.php");
 }
 if(isset($_POST["loginbtn"])){
  $email = $_POST['email'];
@@ -13,7 +13,7 @@ if(isset($_POST["loginbtn"])){
      if($password == $row["password"]){
        $_SESSION["login"] = true;
        $_SESSION["customerCode"] =$row["customerCode"];
-       header("location: welcome.php");
+       header("location: index.php");
      }
      else{
         echo
@@ -50,10 +50,8 @@ if(isset($_POST["loginbtn"])){
     <div class ="navbar">
      <img  id ='img'src="./images/logo.png" alt="">
      <ul>
-     <li>About</li>
-     <li>What’s new</li>
-     <li>Hair Care</li>
-     <li>Skin Care</li>
+     <li><a href ="mainpage.php">Home</a></li>
+     <li>Product</li>
      </ul>
      <div class="line"></div>
     </div>
